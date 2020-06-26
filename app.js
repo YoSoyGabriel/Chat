@@ -7,16 +7,15 @@ const port = 3000;
 // create a server using express 
 // listen to port 3000
 
-
-
-
 app.listen(port, () =>{
   console.log('listening on por 3000');
-
 });
 
+app.use(express.static('public'));
+
+
 app.get('/', (req, res) => {
-  res.send(''); 
+  res.send('index'); 
 });
 
 
