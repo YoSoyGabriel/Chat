@@ -2,7 +2,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-}
+  
+    }
 
 html{
      width: 100%;
@@ -12,7 +13,7 @@ html{
 
 h4{
     display: inline-block;
-    color: #1976d2 ;
+    color: #e53935;
     font-weight:  600;
     margin-left: 20px;
 }
@@ -28,7 +29,7 @@ h4{
     position: absolute;
     bottom: 1em;
     width: 90%;
-   
+  
 }
 
 #inputMassageContainer{
@@ -64,7 +65,7 @@ h4{
 
 #siedeMenu {
      height: 100vh;
-     padding: 50px 0px;
+     padding: 30px 0px;
 
 }
  
@@ -76,12 +77,6 @@ h4{
 }
 
  
-#containerBuscar button{
-    border: none;
-    background: none;
-    padding: 0px;
-    justify-content: center;
-}
 
 i{
     color: white;
@@ -97,14 +92,25 @@ i{
 
 #menu li {
     padding: 10px;
-    margin-top: 10px;
+    margin-top: 7px;
 }
 
 
 img{
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
 }
+
+ ul li i{
+     padding:15px;
+     border-radius: 10px;
  
+ }
+
+ 
+ ul li i:hover{
+      color: rgb(255, 173, 115);
+      transition:  0.5s;
+    }
  
