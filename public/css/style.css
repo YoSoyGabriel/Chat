@@ -4,13 +4,12 @@
     box-sizing: border-box;
   
     }
-
 html{
-     width: 100%;
-     height: 100%;
+    background-image: url();
+    background-position: center;
+    background-size:cover;
 }
  
-
 h4{
     display: inline-block;
     color: #e53935;
@@ -18,39 +17,46 @@ h4{
     margin-left: 20px;
 }
 
+  
 #massageContainer{
      width: 100%;
-     height:450px; 
+     height: 10px;
      background: #f2f2f2;
 }
-
+ 
 
 #continerInputMessage{
     position: absolute;
     bottom: 1em;
     width: 90%;
-  
 }
 
 #inputMassageContainer{
-    width:90%;
-    padding: 0px 30px;
-    display: flex;
-     border: 1px solid darkgray;
-     border-radius: 50px;
-     margin: auto;
+    width:60%;
+    display:flex;
+    background:#cdefff  ;
+    border-radius: 50px;
 }
 
 #inputMassageContainer input {
-    padding: 5px 15px;
+    padding: 5px 10px;
     border: none;
+    width: 80%;
+}
+input::placeholder{
+    color: rgb(36, 36, 36);
+    text-align: center;
 }
 
 #inputMassageContainer input:hover{
     border: none;
 }
 
- 
+#inputMassageContainer button i {
+    padding: 0;
+    font-size: 30px;
+    color: rgb(212, 211, 211);
+} 
 
 #btnSend{
    border:none;
@@ -58,14 +64,15 @@ h4{
 }
 
 #btnSend i{
-    color:#e4e4e4;
+    color:#008AC9;
     
 }
 
 
 #siedeMenu {
-     height: 100vh;
+     height: 80vh;
      padding: 30px 0px;
+     background:#008AC9 ;
 
 }
  
@@ -110,7 +117,7 @@ img{
 
  
  ul li i:hover{
-      color: rgb(255, 173, 115);
-      transition:  0.5s;
+     background: #3C4B82;
+      transition:  0.3s;
     }
  
