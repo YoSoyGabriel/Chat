@@ -1,0 +1,110 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+     width: 100%;
+     height: 100%;
+}
+ 
+
+h4{
+    display: inline-block;
+    color: #1976d2 ;
+    font-weight:  600;
+    margin-left: 20px;
+}
+
+#massageContainer{
+     width: 100%;
+     height:450px; 
+     background: #f2f2f2;
+}
+
+
+#continerInputMessage{
+    position: absolute;
+    bottom: 1em;
+    width: 90%;
+   
+}
+
+#inputMassageContainer{
+    width:90%;
+    padding: 0px 30px;
+    display: flex;
+     border: 1px solid darkgray;
+     border-radius: 50px;
+     margin: auto;
+}
+
+#inputMassageContainer input {
+    padding: 5px 15px;
+    border: none;
+}
+
+#inputMassageContainer input:hover{
+    border: none;
+}
+
+ 
+
+#btnSend{
+   border:none;
+   background: none;
+}
+
+#btnSend i{
+    color:#e4e4e4;
+    
+}
+
+
+#siedeMenu {
+     height: 100vh;
+     padding: 50px 0px;
+
+}
+ 
+
+#siedeMenuPeople{
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    padding: 40px 0px;
+}
+
+ 
+#containerBuscar button{
+    border: none;
+    background: none;
+    padding: 0px;
+    justify-content: center;
+}
+
+i{
+    color: white;
+}
+
+ 
+#menu{
+    list-style: none;
+    width: 100%;
+    text-align: center;
+   
+}
+
+#menu li {
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+ 
+ 

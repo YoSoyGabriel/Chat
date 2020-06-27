@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>   
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">       
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat</title>
+</head>
+<body>
+     
+    <div class="container-fluid">
+         <div class="row" style="margin-bottom:0;">
+            <div class="col s1  blue darken-3" id="siedeMenu">
+                   <ul id="menu">
+                       <li><img src="https://image.freepik.com/free-vector/hand-drawn-ninja-warrior-background_23-2147872930.jpg" alt="foto" id="foto"></li>
+                        <br>
+                        <br> 
+                       <li><a href="#"><i class="material-icons">chat</i></a></li>
+                       <li><a href="#"><i class="material-icons">settings</i></a></li>
+                       <li><a href="#"><i class="material-icons">close</i></a></li>
+                   </ul>
+
+            </div>
+              <!-- <div class="col s3  blue darken-1" id="siedeMenuPeople">
+                            <div id="containerBuscar">
+                                <input type="text" name="buscar">
+                                <button type="search"><i class="material-icons">search</i></button>
+                            </div>
+              </div> -->
+              <div class="col s11 white" style="height:100vh; position: relative;">
+                     <div>
+                           <h4>Chat online</h4>
+                     </div>
+                        <div class=" " id="massageContainer">
+
+
+                  </div>
+
+                  <div id="continerInputMessage">
+                    <div id="inputMassageContainer">
+                        <input type="text" name="massage" placeholder="Escribe un nuevo mensaje..." id="massage">
+                         <button type="submit" id="btnSend"> <i class="material-icons">send</i></button>
+                    </div>
+                 </div>
+              </div>
+            
+         </div>
+    </div>
+ 
+    <script src="chat.js"></script>
+</body>
+</html>
