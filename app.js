@@ -1,5 +1,6 @@
 
 // import packages
+var todoComtrollers = require('./public/controllers/todoControllers');
 const socket = require('socket.io'); 
 const express = require('express');
 const app = express(); 
@@ -18,6 +19,8 @@ app.get('/', (red, res) => {
  
 });
 
+todoComtrollers(app);
+
 
 app.get('/login', (red, res) => {
       res.sendfile('public/views/cuenta.html');
@@ -26,8 +29,9 @@ app.get('/login', (red, res) => {
  var io = socket(server); 
 
  io.on('connection',function(socket) {
-   console.log('socket connected'); 
+   console.log('socket connected'  + socket.id); 
       socket.on('chat', function(data){
           io.emit('chat', data)
       });
  });
+ 

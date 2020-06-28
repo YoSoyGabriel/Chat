@@ -38,7 +38,7 @@ body{
  } 
 
  .cont a:last-child{
-     background: tomato;
+     background: rgb(155, 155, 154);
  }
 
  .cont a i  {
@@ -54,4 +54,5 @@ body{
 
  img{
      border-radius: 50%;
+     margin-top: 20px;
  }
