@@ -37,7 +37,15 @@ app.get('/auth/facebook/callback',
  
  app.get('/facebook',
  passport.authenticate('facebook', { scope: 'read_stream' })
-);         
+);   
+
+
+app.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/login');
+});
+
+};
+
 
  
-};

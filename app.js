@@ -33,5 +33,12 @@ app.get('/login', (red, res) => {
       socket.on('chat', function(data){
           io.emit('chat', data)
       });
+
+     socket.on('typing', function(data){
+         socket.broadcast.emit('typing', data);
+     });  
+
  });
+
+
  
