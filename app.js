@@ -3,8 +3,27 @@
 var todoComtrollers = require('./public/controllers/todoControllers');
 const socket = require('socket.io'); 
 const express = require('express');
+const path = require('path');
 const app = express(); 
 const port = 3000; 
+
+app.use(express.static('public'));
+
+
+app.get('/', (red, res) => {});
+
+app.get('/cuenta', (red, res) => {
+       res.sendFile('cuenta.html', {root: __dirname + '/public/views/'} );
+});
+
+todoComtrollers(app);
+
+
+// app.get('/cuenta', (red, res) => {
+//       res.sendFile('');
+// });
+
+
 
 // create a server using express 
 // listen to port 3000
@@ -13,18 +32,6 @@ const server = app.listen(port, () =>{
   console.log('listening on port 3000');
 });
 
-app.use(express.static('public'));
-
-app.get('/', (red, res) => {
- 
-});
-
-todoComtrollers(app);
-
-
-app.get('/login', (red, res) => {
-      res.sendfile('public/views/cuenta.html');
-});
 
  var io = socket(server); 
 

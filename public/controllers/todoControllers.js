@@ -1,4 +1,3 @@
- 
 
 module.exports = function(app){
  
@@ -9,14 +8,16 @@ var passport = require('passport')
 passport.use(new FacebookStrategy({
     clientID: 1024972257917510,
     clientSecret: '47bd5c5067480097099c0f32f77ec44b',
-    callbackURL: "http://localhost:3000/"
+    callbackURL: "/auth/facebook/callback",
+    profileFields: ['id', 'displayName', 'photos', 'email']
   },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate(profile, function(err, user) {
-      if (err) { return done(err); }
-      done(null, user);
-    });
-  }
+  function(accessToken, refreshToken, profile, cb) {
+    console.log(accessToken);
+     console.log(profile);
+  //   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
+  //     return cb(err, user);
+  //   });
+    }
 ));
 
   
@@ -32,17 +33,17 @@ app.get('/facebook', passport.authenticate('facebook'));
 // access was granted, the user will be logged in.  Otherwise,
 // authentication has failed.
 app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: '/',
-                                      failureRedirect: '/login' }));
- 
- app.get('/facebook',
- passport.authenticate('facebook', { scope: 'read_stream' })
-);   
+  passport.authenticate('facebook', {failureRedirect: '/' }), 
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/cuenta');
+  });
+    
 
 
 app.get('/logout', function(req, res){
   req.logout();
-  res.redirect('/login');
+  res.redirect('/');
 });
 
 };

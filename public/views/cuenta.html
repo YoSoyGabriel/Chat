@@ -3,24 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styleCuenta.css">
-    <title>Log in account</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&family=Noto+Sans+JP&family=Open+Sans&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">       
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Chat</title>
 </head>
 <body>
-
-     <div class="container">
-                  <img src="https://image.freepik.com/free-vector/cartoon-big-blade-ninja-mascot_10308-328.jpg" alt="foto" width="200" height="200" >
+     
+    <div class="container z-depth-1">
+            <div class="row" style="margin-bottom:0;margin-top:40px;">
+                <div class="col s2" id="siedeMenu">
+                       <ul id="menu">
+                           <li><img src="https://image.freepik.com/free-vector/cartoon-big-blade-ninja-mascot_10308-328.jpg" alt="foto" id="foto"></li>
+                            <br>
+                            <br> 
+                           <li><a href="#"><i class="material-icons">chat</i></a></li>
+                           <li><a href="#"><i class="material-icons">settings</i></a></li>
+                           <li><a href="/logout"><i class="material-icons">close</i></a></li>
+                       </ul>
                 
-                  <h1>Entrar al chat ninja</h1>
-                  <i>Utiliza una de estas cuentas</i>
-                  <br>
-             <div class="cont">
-               <a href="/facebook"><i href="/facebook" class="fa fa-facebook" style="color: white;"> </i> Iniciar con facebook</a> 
-                <a href="../index.html" ><i class="fa fa-user" style="color: white;"> </i> Entrar como invitado</a>  
-              </div>
- 
-     </div>
+                </div>
+                  <!-- <div class="col s3  blue darken-1" id="siedeMenuPeople">
+                                <div id="containerBuscar">
+                                    <input type="text" name="buscar">
+                                    <button type="search"><i class="material-icons">search</i></button>
+                                </div>
+                  </div> -->
+                  <div class="col s10 white" style="height:80vh; position: relative;padding: 0;">
+                         <div>
+                               <h4>Chat ninja</h4>
+                         </div>
+                            <div id="massageContainer" onclick="CloseEmojins()">
+                                      <div id="output"></div>
+                                      <div id="feedback"></div>
+                            </div>
+    
+                      <div id="continerInputMessage">
+                        <div id="inputMassageContainer">
+                            <input  type="text" name="massage" placeholder="Escribe un nuevo mensaje..." id="message">
+                              <button  id="borrar" > <i class="material-icons">delete</i></button> 
+                              <button  id="emojin" onclick="showEmojins()" ondblclick="CloseEmojins()"> <i class="material-icons">face</i></button> 
+                              <button  id="btnSend"> <i class="material-icons">send</i></button> 
+                        </div>
+                     </div>
+                        <div id="emojinContainer" class="animate__animated "></div>  
+                    
+             </div>
+
+        </div>
+      </div>
+
+    <script src="chat.js"></script> 
+    <script src="./emojins.js"></script>
 </body>
 </html>
