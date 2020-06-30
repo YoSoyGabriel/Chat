@@ -7,28 +7,31 @@ var ouput = document.getElementById('output');
 var message = document.getElementById('message');
 var send = document.getElementById('btnSend');
 var feedback = document.getElementById('feedback');
-var user = "gabriel"; 
+var current_user = document.getElementById('user').textContent; 
 
  // añadir evento al btn send 
    send.addEventListener('click', function(){
        if(message.value != null && message.value != ""){
         socket.emit('chat', {
-                message: message.value
+                message: message.value,
+                user : current_user
             }); 
-            CleanMessage(message); 
-         
+            CleanMessage(message);  
        }
         
   });
 
 message.addEventListener('keypress', function(event){
    if(event.keyCode == 13){
-    socket.emit('chat', {
-            user: user, 
-            message: message.value      
-        });
-
-        CleanMessage(message); 
+    if(message.value != null && message.value != ""){
+        socket.emit('chat', {
+                message: message.value,
+                user : current_user
+            }); 
+            CleanMessage(message); 
+         
+       }
+        
    }
  
 });
@@ -36,7 +39,7 @@ message.addEventListener('keypress', function(event){
 
 
 message.addEventListener('change', function(){
-    socket.emit('typing', { user : user} );
+    socket.emit('typing', { user : current_user} );
 });
 
 
@@ -44,11 +47,15 @@ message.addEventListener('change', function(){
  // escuchar al servidor 
  
  socket.on('chat', function(data){
-    //  if(id == data.id_cliente){
-    //     output.innerHTML += '<p id="cliente">'+ data.message + '</p><br/>'; 
-    //  }
+     if(current_user == data.user.toString()){
+        output.innerHTML += '<p id="currenMessage"><strong>'+ data.user +'</strong>: '+ data.message + '</p><br/>'; 
+        feedback.innerHTML = "";     
+    } else {  
+
     output.innerHTML += '<p><strong style=color:>'+ data.user +'</strong>: '+ data.message + '</p><br/>'; 
     feedback.innerHTML = "";
+
+       }
 });
 
  

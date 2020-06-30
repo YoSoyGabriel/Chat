@@ -196,6 +196,74 @@ img{
     background:#b6e8ff ;
 }
 
- 
+
+#user{
+      font-size: 18px;
+      margin-left: 10px;
+}
+.container{
+    position: relative;
+}
 
  
+ 
+#windowSetting{
+    display: none;
+    width: 50%;
+    padding: 1em 3em;
+    text-align: center;
+    background:#008AC9;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+}
+
+#windowSetting  h5 {
+    text-align: left;
+}
+
+#windowSetting input{
+    margin-top: 10px;
+    border: none;
+    width: 99%;
+    background: white;
+    text-align: left;
+}
+
+#windowSetting input::placeholder{
+    color: rgb(196, 196, 196);
+}
+
+#windowSetting button{
+    border:  none;
+    padding: 10px;
+    display: inline;
+    border: none;
+} 
+
+#guardar {
+    color: white ; 
+    background: rgb(2, 218, 74);
+}
+
+#cancelar {
+    background: rgb(255, 60, 60);
+    color: white ; 
+}
+
+
+#output  #currenMessage {
+    background:#a8e3ff;
+    color: black;
+    margin-top: 5px;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 16px;
+    padding: 8px ;
+    max-width: 80%;
+    overflow-wrap: break-word;
+    float: right;
+
+}
